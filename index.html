@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Apresentação</title>
-  </head>
 
-  <body>
+<head>
+	<meta charset="utf-8">
+	<title>Apresentação</title>
+  
+ 
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <header>
-      <h1>Apresentação</h1>
-    </header>
+<body>
 
-      <article>
-        <h2> Apresentação ?</h2>
+	<header>
+		<h1>Apresentação</h1>
+	</header>
 
-        <p>Sim,uma apresentação, currículos geralmente contém informações acadêmicas, registros de trabalhos passados e eles também são formais.</p>
+	<article>
+		<h2> Apresentação ?</h2>
 
-        <h3>Um pouco sobre o escritor</h3>
+		<p>Sim,uma apresentação, currículos geralmente contém informações acadêmicas, registros de trabalhos passados e eles também
+			são formais.</p>
 
-        <p>Registrado como Juliano Eiki Yokoyama, está cursando o terceiro ano (2020) de informática integrado ao ensino médio no Instituto Federal de Educação, Ciência e Tecnologia São Paulo (IFSP), gosta de golfinhos e matemática.  </p/>
+		<h3>Um pouco sobre o escritor</h3>
 
-        <h3> Golfinhos </h3>
+		<p>Registrado como Juliano Eiki Yokoyama, está cursando o terceiro ano (2020) de informática integrado ao ensino médio
+			no Instituto Federal de Educação, Ciência e Tecnologia São Paulo (IFSP), gosta de golfinhos e matemática. </p/>
 
-        <p>O mundo pressiona Juliano a ser rico, mas ele não quer. Um de seus objetivos é ajudar os golfinhos, animais muito inteligentes que costumam ser utilizados como atrações em zoológicos, como ele pretende resolver esse problema ainda é um mistério. </p>
-        <img id="golfinho" src="Imagens/golfinho.jpg" alt="golfinho mergulhando" width="250" height="225"/>
+			<h3> Golfinhos </h3>
+
+			<p>O mundo pressiona Juliano a ser rico, mas ele não quer. Um de seus objetivos é ajudar os golfinhos, animais muito inteligentes
+				que costumam ser utilizados como atrações em zoológicos, como ele pretende resolver esse problema ainda é um mistério.
+				</p>
+			<img id="golfinho" src="Imagens/golfinho.jpg" alt="golfinho mergulhando" width="250" height="225"/>
         <p> Imagen retirada de http://mediaarchive.ksc.nasa.gov/detail.cfm?mediaid=21807 </p>
+        <button onclick="myFunction()">Ver golfinhos no escuro</button>
 
         <h3> Matemática </h4>
 
@@ -46,7 +55,25 @@
     <footer> 
       <p>Sponsored by GreenPace </p>  
     </footer>
-  <script type ="text/javascript"></script>
   
+   <script type ="text/javascript" >
+  var foto = document.getElementById("golfinho");
+
+foto.onmouseover = function() {
+  foto.classList.remove("foto_sem_mouse");
+  foto.classList.add("foto_com_mouse");
+}
+
+foto.onmouseout = function() {
+  foto.classList.remove("foto_com_mouse");
+  foto.classList.add("foto_sem_mouse");
+}
+
+function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+  </script>
   </body>
+  
 </html>
