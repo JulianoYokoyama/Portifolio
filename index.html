@@ -3,13 +3,12 @@
 
 <head>
 	<meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css"/> 
 	<title>Apresentação</title>
-  
- 
-  <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
+<body class="escuro">
 
 	<header>
 		<h1>Apresentação</h1>
@@ -18,62 +17,79 @@
 	<article>
 		<h2> Apresentação ?</h2>
 
-		<p>Sim,uma apresentação, currículos geralmente contém informações acadêmicas, registros de trabalhos passados e eles também
-			são formais.</p>
+		<p>Sim,uma apresentação, currículos geralmente contém <br> informações acadêmicas, registros de trabalhos passados e eles<br>também são formais.</p>
 
-		<h3>Um pouco sobre o escritor</h3>
+		<h2>Um pouco sobre o escritor</h2>
 
-		<p>Registrado como Juliano Eiki Yokoyama, está cursando o terceiro ano (2020) de informática integrado ao ensino médio
-			no Instituto Federal de Educação, Ciência e Tecnologia São Paulo (IFSP), gosta de golfinhos e matemática. </p/>
+		<p>Registrado como Juliano Eiki Yokoyama, está cursando o terceiro<br> ano (2020) de informática integrado ao ensino médio
+			no Instituto <br>Federal de Educação, Ciência e Tecnologia São Paulo (IFSP), gosta de golfinhos e matemática. </p/>
 
-			<h3> Golfinhos </h3>
 
-			<p>O mundo pressiona Juliano a ser rico, mas ele não quer. Um de seus objetivos é ajudar os golfinhos, animais muito inteligentes
-				que costumam ser utilizados como atrações em zoológicos, como ele pretende resolver esse problema ainda é um mistério.
+			<h2> Golfinhos </h2>
+
+			<p>O mundo pressiona Juliano a ser rico, mas ele não quer.<br> Um de seus objetivos é ajudar os golfinhos, animais muito inteligentes<br>que costumam ser utilizados como atrações em zoológicos, como <br>ele pretende resolver esse problema ainda é um mistério.
 				</p>
 			<img id="golfinho" src="Imagens/golfinho.jpg" alt="golfinho mergulhando" width="250" height="225"/>
         <p> Imagen retirada de http://mediaarchive.ksc.nasa.gov/detail.cfm?mediaid=21807 </p>
-        <button onclick="myFunction()">Ver golfinhos no escuro</button>
+        <button id="acender">Ver golfinhos na luz</button>
+        <button id="escuro">Ver golfinhos no escuro</button>
 
-        <h3> Matemática </h4>
+        <h2> Matemática </h2>
 
-        <p>A matemática é odiada por muitas pessoas, os motivos ainda são um mistério para a ciência, mas isso deve acabar. Para Juliano a matemática é a unica prova de nossa existência, e ele pretende um dia desvender com ela parte do mistério da vida.</p>
+        <p>A matemática é odiada por muitas pessoas, os motivos ainda são<br> um mistério para a ciência, mas isso deve acabar. Para Juliano<br> a matemática é a unica prova de nossa existência, e ele pretende um<br> dia desvender com ela parte do mistério da vida.</p>
 
       </article>
 
       <article>
 
         <h2> Prentende ajudar ? </h2>
+        <div class="subbox">
+          <div class="box">
+
         <ul>
+      
           <li><a href="mailto:goleano.yoko@gmail.com?"> Gmail para contato</a> </li>
           <li><a href="https://doe.greenpeace.org.br/"> Conheça O GreenPace</a> </li>
           <li><a href="https://doe.greenpeace.org.br/salve-a-amazonia/p?appeal=19096&utm_term=greenpeace&utm_campaign=&utm_source=bing&utm_medium=cpc&hsa_acc=3659611372&hsa_cam=316346403&hsa_grp=1353499084414613&hsa_ad=&hsa_src=o&hsa_tgt=kwd-84593878818983:loc-688&hsa_kw=greenpeace&hsa_mt=e&hsa_net=adwords&hsa_ver=3&msclkid=ce0384421e401dab43acdb254f5decb5"> Doe para o GreenPace</a></li>
-          <li><a href="sbm.org.br"> Conheça a SBM </a></li>
+          <li><a href="https://www.sbm.org.br/"> Conheça a SBM </a></li>
+          
         </ul>
+        </div>
+        </div>
+
         </article>
 
     <footer> 
       <p>Sponsored by GreenPace </p>  
     </footer>
   
-   <script type ="text/javascript" >
-  var foto = document.getElementById("golfinho");
+   <script src="jquery-3.5.1.min.js"> </script>
+   
+   <script>
+   $(document).ready(function() {
+    $("#golfinho").mouseenter(function() {
+      $(this).addClass("foto_com_mouse");
+      $(this).removeClass("foto_sem_mouse");
+    });
 
-foto.onmouseover = function() {
-  foto.classList.remove("foto_sem_mouse");
-  foto.classList.add("foto_com_mouse");
-}
+    $("#golfinho").mouseleave(function() {
+      $(this).removeClass("foto_com_mouse");
+      $(this).addClass("foto_sem_mouse");
+    });
 
-foto.onmouseout = function() {
-  foto.classList.remove("foto_com_mouse");
-  foto.classList.add("foto_sem_mouse");
-}
+    $("#acender").click(function() {
+    $("body").removeClass("escuro");
+    $("body").addClass("claro");
+  });
 
-function myFunction() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-}
-  </script>
-  </body>
+  $("#escuro").click(function() {
+    $("body").addClass("escuro");
+    $("body").removeClass("claro");
+  });
   
+});
+  </script>
+
+  </body>
+
 </html>
