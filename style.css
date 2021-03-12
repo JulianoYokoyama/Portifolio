@@ -1,0 +1,53 @@
+.foto_com_mouse {
+  width: 250px;
+  height: 250px;
+  transition: 0.3;
+
+}
+
+.foto_sem_mouse {
+  width: 200px;
+  height: 200px;
+  transition: 0.3;
+}
+
+.escuro {
+  background-color: black;
+  color: white;
+  transition: 1s;
+}
+
+.claro {
+  background-color: white;
+  color: black;
+  transition: 1s;
+}
+
+body {
+  text-align: center;
+  background-image: url("Imagens/hexagono.jpg");
+  
+  
+}
+.subbox {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  width: 200px;
+  margin-right: 40px;
+}
+
+p { 
+  font-size: 22px;
+}
+
+h1 {
+  font-size: 40px;
+  padding: 0px 0px 10px 0px;
+}
+
+h2 {
+  font-size: 29.5px;
+}
